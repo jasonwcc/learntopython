@@ -16,21 +16,42 @@ python calc.py 25 5 <br>
 
 <b>Dockerfile</b> will build it as container image. Lets try  it
 
-# The steps 
-<b> First we build it as docker container image </b><br>
-podman build -t calc .
+# Try it
+Copy this source code to your local system
+```
+git clone https://gitlab.com/jasonwcc.my/learntopython 
+```
 
-<b> Then we can run it but first we attempt without passing any number to it</b><br>
+Build it as docker container image 
+```
+podman build -t calc .
+```
+
+First we attempt to start the container without passing any number to it
+```
 podman run -d calc
+NOTE: the container started successfully. 
 
 podman logs -l
 10 * 20 = 200
 
 podman rm -l
 
-<b> Now we pass 2 numbers to it </b><br>
+```
+
+Now we pass two numbers to as we start the container
+```
 podman run -d calc 25 5
+NOTE: the container started successfully. 
 
 podman logs -l
 25 * 5 = 125
+```
+
+Clean up
+``` 
+podman stop -af
+podman rm -af
+podman rmi -f calc
+```
 
