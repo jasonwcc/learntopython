@@ -1,1 +1,3 @@
-print("Hello World. Hope you enjoy this training!")
+def hello():
+    print("Handling request to home page.")
+    return "Hello, Azure!"
